@@ -83,7 +83,7 @@ DT <- getdata(download=FALSE)
 str(DT)
 head(DT)
 
-##  Plot to the screen and verify everthing looks close
+##  Plot to the screen and verify everything looks close
 ##
 ##  Text scaling will be off on screen, but be OK in png
 ##  TODO: Can we size screen to be like png?
