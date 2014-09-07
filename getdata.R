@@ -41,11 +41,26 @@ getdata <- function (download=TRUE) {
   DT[, Timestamp := dmy_hms(paste(DT$Date, DT$Time))]
   
   ##  make columns to be plotted as numeric
+  ##  TODO: has to be a better way
   
-  DT$Global_active_power <- as.numeric(DT$Global_active_power)
-  DT$Sub_metering_1      <- as.numeric(DT$Sub_metering_1)
-  DT$Sub_metering_2      <- as.numeric(DT$Sub_metering_2)
-  DT$Sub_metering_3      <- as.numeric(DT$Sub_metering_3)
+  DT$Global_reactive_power  <- as.numeric(DT$Global_reactive_power) 
+  DT$Global_active_power    <- as.numeric(DT$Global_active_power)
+  DT$Sub_metering_1         <- as.numeric(DT$Sub_metering_1)
+  DT$Sub_metering_2         <- as.numeric(DT$Sub_metering_2)
+  DT$Sub_metering_3         <- as.numeric(DT$Sub_metering_3)
+  DT$Voltage                <- as.numeric(DT$Voltage)
+
+  ## Failed better way
+#   cols <- c('Global_active_power',
+#             'Global_reactive_power',
+#             'Sub_metering_1',
+#             'Sub_metering_2',
+#             'Sub_metering_3',
+#             'Voltage'
+#             )
+#   lapply(cols, function(col) { DT[,col] <- as.numeric(DT[,col]) })
+#   str(DT)
+#   head(DT)
   
   return(DT)
 }
