@@ -1,4 +1,12 @@
 
+# Whoa, this package helped with the two new plots looking really black
+#
+# Using this we can control the linewidth easily so that we don't get large blocks 
+#   of black when points are dense
+#
+# It also gives the gray box and black axis look we were trying to get
+# manually
+#
 install.packages("Cairo")
 library(Cairo)
 ?Cairo
